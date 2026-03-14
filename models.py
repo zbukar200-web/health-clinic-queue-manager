@@ -14,6 +14,8 @@ class Patient:
     """Represents a patient in the clinic queue."""
     
     def __init__(self, patient_id, name, age, reason):
+            
+    # Initialize patient attributes
     # Store patient information and registration time
         self.patient_id = patient_id
         self.name = name
