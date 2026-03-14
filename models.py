@@ -8,6 +8,8 @@ from datetime import datetime
 from collections import deque
 
 class Patient:
+    
+# Represents a single patient entity
 # This class represents a single patient in the clinic
     """Represents a patient in the clinic queue."""
     
