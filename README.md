@@ -12,3 +12,12 @@ A Flask web application for managing patient queues in a health clinic"
 - 🌶️ Flask Web Framework
 - ⏰ DateTime module for timestamping
 - 📦 Collections.deque for FIFO queue
+
+
+## Assignment Information
+
+- **Course:** COS 202
+- **Assignment:** 4 - Building for the Web with Flask
+- **Instructor:** Engr. Hassan Yau Hamisu
+- **Submitted by:** zbukar200
+- **Date:** March 2026
