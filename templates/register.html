@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>📝 Register Patient - Health Clinic Queue Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        a.back-btn {
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        a.back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Register New Patient</h1>
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter patient's full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age" required placeholder="Enter patient's age" min="1" max="150">
+            </div>
+            
+            <div class="form-group">
+                <label for="reason">Reason for Visit *</label>
+                <textarea id="reason" name="reason" required placeholder="Enter reason for clinic visit"></textarea>
+            </div>
+            
+            <button type="submit">✓ Register Patient</button>
+            <a href="{{ url_for('home') }}" class="back-btn">← Back to Queue</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🏥 Health Clinic Queue Manager - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .stat-box {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .stat-box h3 {
+            margin: 0;
+            color: #0066cc;
+        }
+        .stat-box p {
+            margin: 5px 0 0 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .actions {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button, a.btn {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover, a.btn:hover {
+            background-color: #0052a3;
+        }
+        .queue-list {
+            margin-top: 30px;
+        }
+        .queue-list h2 {
+            color: #333;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        .patient-card {
+            background-color: #f9f9f9;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        .patient-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .patient-id {
+            background-color: #0066cc;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .empty-message {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Health Clinic Queue Manager</h1>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <h3>Patients Waiting</h3>
+                <p>{{ queue_size }}</p>
+            </div>
+            <div class="stat-box">
+                <h3>Patients Seen Today</h3>
+                <p>{{ patients_seen }}</p>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="{{ url_for('register') }}" class="btn">+ Register New Patient</a>
+            <form method="POST" action="{{ url_for('see_patient') }}" style="display: inline;">
+                <button type="submit">✓ Mark Next Patient as Seen</button>
+            </form>
+        </div>
+        
+        <div class="queue-list">
+            <h2>Current Waiting List (FIFO Queue)</h2>
+            {% if waiting_list %}
+                {% for patient in waiting_list %}
+                    <div class="patient-card">
+                        <p><span class="patient-id">ID: {{ patient.patient_id }}</span></p>
+                        <p><strong>Name:</strong> {{ patient.name }}</p>
+                        <p><strong>Age:</strong> {{ patient.age }}</p>
+                        <p><strong>Reason:</strong> {{ patient.reason }}</p>
+                        <p><strong>Wait Time:</strong> {{ patient.wait_time }}</p>
+                        <p><strong>Registered At:</strong> {{ patient.timestamp }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="empty-message">
+                    No patients in queue. Queue is empty!
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
