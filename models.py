@@ -30,6 +30,8 @@ class Patient:
         """Mark patient as seen by doctor."""
         self.seen = True
     
+        
+    # Calculate patient waiting time
     def get_wait_time(self):
         """Calculate how long patient has been waiting."""
         wait_duration = datetime.now() - self.timestamp
