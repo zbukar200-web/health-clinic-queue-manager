@@ -16,6 +16,7 @@ clinic.add_patient("Jane Smith", 32, "Flu Symptoms")
 clinic.add_patient("Ahmed Hassan", 28, "Headache")
 
 
+# Home route - display queue and statistics
 @app.route('/')
 def home():
 # Home route - display current waiting queue
