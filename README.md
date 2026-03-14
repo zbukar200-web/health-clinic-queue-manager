@@ -12,7 +12,16 @@ A Flask web application for managing patient queues in a health clinic"
 - 🌶️ Flask Web Framework
 - ⏰ DateTime module for timestamping
 - 📦 Collections.deque for FIFO queue
+## Installation
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/zbukar200-web/health-clinic-queue-manager.git
+ 2.  Install dependencies:
+   pip install -r requirements.txt
+  3.  Run the application:
+   python app.py
+  4. Open browser and go to: http://127.0.0.1:5000
 
 ## Assignment Information
 
