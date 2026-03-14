@@ -45,6 +45,7 @@ class Patient:
         }
 
 
+# Manages FIFO queue for clinic patients
 class ClinicQueue:
 # This class manages the FIFO queue of patients
     """Manages the queue of patients (FIFO - First In, First Out)."""
