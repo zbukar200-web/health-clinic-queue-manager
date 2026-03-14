@@ -31,6 +31,7 @@ def home():
                          patients_seen=patients_seen)
 
 
+# Register route - handle patient registration
 @app.route('/register', methods=['GET', 'POST'])
 def register():
 # Register route - handle patient registration form
