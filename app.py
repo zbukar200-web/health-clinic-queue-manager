@@ -48,6 +48,7 @@ def register():
     return render_template('register.html')
 
 
+# See-patient route - process next patient in queue
 @app.route('/see-patient', methods=['POST'])
 def see_patient():
     """Mark the next patient as seen."""
