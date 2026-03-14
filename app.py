@@ -4,7 +4,8 @@ from models import ClinicQueue
 
 app = Flask(__name__)
 
-# Initialize the clinic queue
+
+# Initialize clinic queue instance
 clinic = ClinicQueue()
 # Initialize clinic queue for managing patients
 
