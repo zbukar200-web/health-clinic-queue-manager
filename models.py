@@ -24,6 +24,8 @@ class Patient:
         self.timestamp = datetime.now()
         self.seen = False
     
+        
+    # Mark patient as seen by doctor
     def mark_as_seen(self):
         """Mark patient as seen by doctor."""
         self.seen = True
