@@ -1,3 +1,0 @@
-# Dependencies for Health Clinic Queue Manager Flask App
-Flask==2.3.2
-Werkzeug==2.3.6
